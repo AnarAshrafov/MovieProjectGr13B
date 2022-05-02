@@ -1,0 +1,31 @@
+﻿@model MovieProjectGr13B.Models.Database.Movie
+@{
+    ViewBag.Title = "NewMovie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>Movie Title</label>
+        <input type="text" class="form-control" name="Title" required="" maxlength="255" />
+    </div>
+    <div>
+        <label>Director</label>
+        <input type="text" class="form-control" name="Director" required="" maxlength="50" />
+    </div>
+    @*<div>
+        <label>Product Category</label>
+        @Html.DropDownListFor(m => m.TBLCATEGORy.CATEGORYID, (List<SelectListItem>)ViewBag.vl, new { @class = "form-control" })
+    </div>*@
+    <div>
+        <label>Movie Price</label>
+        <input type="text" class="form-control" name="Price" required="" />
+    </div>
+    <div>
+        <label>Release Year</label>
+        <input type="number" class="form-control" name="ReleaseYear" required="" />
+    </div>  
+    <div style="margin-top:15px">
+        <button type="submit" class="btn btn-info">Add Movie</button>
+    </div>
+</form>
