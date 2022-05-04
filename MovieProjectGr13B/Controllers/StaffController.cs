@@ -13,6 +13,10 @@ namespace MovieProjectGr13B.Controllers
         // GET: Staff
 
         MovieProjectContext db = new MovieProjectContext();
+        public ActionResult Index()
+        {
+            return View(db.Customers.ToList());
+        }
         public ActionResult AddMovie()
         {
 
@@ -26,6 +30,18 @@ namespace MovieProjectGr13B.Controllers
             db.Movies.Add(m1);
             db.SaveChanges();
             return View();
+        }
+
+        public ActionResult ListCustOrders()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ListCustOrders(int id)
+        {
+            var filteredResult = db.Orders.Where(m => m.CustomerId == id).ToList();
+
+            return View(filteredResult);
         }
     }
 }

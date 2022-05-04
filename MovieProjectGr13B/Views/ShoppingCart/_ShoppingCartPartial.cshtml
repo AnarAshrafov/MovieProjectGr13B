@@ -1,0 +1,52 @@
+﻿@model MovieProjectGr13B.Models.Database.Movie
+
+<div class="card" style="background-color:chartreuse">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            <h3>@Html.DisplayFor(model => model.Title)</h3>
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+
+
+
+        <dd>
+            @Html.DisplayFor(model => model.Director)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseYear)
+        </dt>
+
+
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseYear)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+    <a href="/ShoppingCart/RemoveOnePiece/@Model.Id" class="btn btn-success">-</a><br />
+    <a href="/ShoppingCart/AddOnePiece/@Model.Id" class="btn btn-success">+</a><br />
+    <a href="/ShoppingCart//@Model.Id" class="btn btn-success">Check Out</a>
+</div>

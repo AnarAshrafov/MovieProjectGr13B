@@ -1,0 +1,15 @@
+﻿@model IEnumerable<MovieProjectGr13B.Models.Database.Movie>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies Shop List</h2>
+
+<div class="container">
+    @foreach (var movie in Model)
+    {
+        @Html.Partial("_MoviePartial", movie)
+    }
+</div>
